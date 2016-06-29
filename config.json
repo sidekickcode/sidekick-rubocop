@@ -1,0 +1,21 @@
+{
+    "analyser": "sidekick-rubocop",
+    "version": "0.0.1",
+    "interpreter": "node",
+    "script": "index.js",
+    "scope": "blob",
+    "category": "object",
+    "tagger": false,
+    "configurable": true,
+    "configFiles": [],
+    "shortName": "rubocop",
+    "displayColor": "red",
+    "language": "rb",
+    "displayName": "Code issues (rubocop)",
+    "displayCategory": "quality",
+    "shortDescription": "Checks your code for quality issues.",
+    "underlyingAnalyser": {
+      "name": "rubocop",
+      "url" : "http://batsov.com/rubocop/"
+    }
+}
