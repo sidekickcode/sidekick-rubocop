@@ -4,6 +4,8 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
+const sr = require('../index');
+
 var fs = require('fs');
 var exec = require("child_process").exec;
 var path = require('path');
@@ -28,6 +30,13 @@ describe('rubocop analyser', function() {
             self.stdout = stdout;
             done();
           });
+    });
+
+    it.only('can run analyser raw', function() {
+      return sr._run('', path.join(__dirname, '/fixtures/fixture.rb'))
+        .then((results) => {
+          expect(results.length).to.eventually.equal(4);
+        })
     });
 
     function runFixture(input, cb) {
