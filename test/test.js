@@ -33,6 +33,7 @@ describe('rubocop analyser', function() {
     });
 
     it.only('can run analyser raw', function() {
+      this.timeout(10000);
       return sr._run('', path.join(__dirname, '/fixtures/fixture.rb'))
         .then((results) => {
           expect(results.length).to.eventually.equal(4);
